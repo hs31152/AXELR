@@ -5,11 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Collections | AXELR</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
-  <div class="topbar">FOR BEST PRICES AND INTERNATIONAL DELIVERIES, WHATSAPP US AT : <a href="https://wa.me/917505585951" target="_blank">+91 75055 85951</a></div>
+  <div class="scroll-progress"><span></span></div>
+
+  <!-- Top bar -->
+  <div class="topbar">
+    FOR BEST PRICES & INTERNATIONAL DELIVERIES, WHATSAPP :
+    <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
+  </div>
+
+  <!-- Navbar -->
   <header class="navbar">
     <a class="logo" href="index.html">AXELR</a>
     <nav class="nav-links" id="navLinks">
@@ -17,53 +25,65 @@
       <a href="collections.html" class="active">Collections</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="#" class="icon"><i class="ri-shopping-bag-line"></i></a>
     </nav>
     <button class="hamburger" id="hamburger"><i class="ri-menu-line"></i></button>
   </header>
 
+  <!-- Page hero -->
   <section class="page-hero small">
-    <h1>Collections</h1>
+    <h1 class="gradient-heading">Collections</h1>
     <p>Curated edits from AXELR ateliers.</p>
   </section>
 
-  <section class="filters">
-    <div class="pill-row">
-      <button class="pill active" data-filter="all">All</button>
-      <button class="pill" data-filter="Aurora">Aurora</button>
-      <button class="pill" data-filter="Noir Luxe">Noir Luxe</button>
-      <button class="pill" data-filter="Ethereal Line">Ethereal</button>
+  <!-- Filters -->
+  <div class="filters-wrap">
+    <div class="filter-bar">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="Aurora" id="Aurora">Aurora</button>
+      <button class="filter-chip" data-filter="Noir Luxe" id="Noir">Noir Luxe</button>
+      <button class="filter-chip" data-filter="Ethereal Line" id="Ethereal">Ethereal</button>
     </div>
-  </section>
+  </div>
 
+  <!-- Products grid -->
   <section class="products">
     <div class="product-grid" id="productGrid">
       <!-- Aurora -->
-      <a class="product-card reveal" data-cat="Aurora" id="aurora">
-        <img src="https://images.unsplash.com/photo-1596460107916-430662021049?q=80&w=1400&auto=format&fit=crop" alt="Aurora Set" />
+      <a class="product-card" data-cat="Aurora"
+         data-title="Aurora Mirrorwork Set" data-price="₹32,999"
+         data-image="assets/img/opo1.jpg">
+        <img src="assets/img/opo1.jpg" alt="Aurora Mirrorwork Set" />
         <div class="pc-info">
           <h4>Aurora Mirrorwork Set</h4>
           <p class="price">₹32,999</p>
         </div>
       </a>
-      <a class="product-card reveal" data-cat="Aurora">
-        <img src="https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1400&auto=format&fit=crop" alt="Aurora Gown" />
+
+      <a class="product-card" data-cat="Aurora"
+         data-title="Aurora Silk Gown" data-price="₹28,999"
+         data-image="assets/img/aurora4.jpg">
+        <img src="assets/img/opo6.jpg" alt="Aurora Silk Gown" />
         <div class="pc-info">
           <h4>Aurora Silk Gown</h4>
           <p class="price">₹28,999</p>
         </div>
       </a>
 
-      <!-- Noir Luxe -->
-      <a class="product-card reveal" data-cat="Noir Luxe" id="noir">
-        <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1400&auto=format&fit=crop" alt="Noir Sari" />
+      <!-- Noir -->
+      <a class="product-card" data-cat="Noir Luxe"
+         data-title="Noir Luxe Sari" data-price="₹24,499"
+         data-image="assets/img/noir1.jpg">
+        <img src="assets/img/opo3.jpg" alt="Noir Luxe Sari" />
         <div class="pc-info">
           <h4>Noir Luxe Sari</h4>
           <p class="price">₹24,499</p>
         </div>
       </a>
-      <a class="product-card reveal" data-cat="Noir Luxe">
-        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1400&auto=format&fit=crop" alt="Noir Jacket" />
+
+      <a class="product-card" data-cat="Noir Luxe"
+         data-title="Noir Embellished Jacket" data-price="₹29,499"
+         data-image="assets/img/noir3.jpg">
+        <img src="assets/img/opo4.jpg" alt="Noir Embellished Jacket" />
         <div class="pc-info">
           <h4>Noir Embellished Jacket</h4>
           <p class="price">₹29,499</p>
@@ -71,15 +91,20 @@
       </a>
 
       <!-- Ethereal -->
-      <a class="product-card reveal" data-cat="Ethereal Line" id="ethereal">
-        <img src="https://images.unsplash.com/photo-1542060748-10c28b62716e?q=80&w=1400&auto=format&fit=crop" alt="Ethereal Anarkali" />
+      <a class="product-card" data-cat="Ethereal Line"
+         data-title="Ethereal Anarkali" data-price="₹26,999"
+         data-image="assets/img/ethereal1.jpg">
+        <img src="assets/img/opo5.jpg" alt="Ethereal Anarkali" />
         <div class="pc-info">
           <h4>Ethereal Anarkali</h4>
           <p class="price">₹26,999</p>
         </div>
       </a>
-      <a class="product-card reveal" data-cat="Ethereal Line">
-        <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1400&auto=format&fit=crop" alt="Ethereal Lehenga" />
+
+      <a class="product-card" data-cat="Ethereal Line"
+         data-title="Ethereal Lehenga" data-price="₹33,999"
+         data-image="assets/img/ethereal2.jpg">
+        <img src="assets/img/opo8.jpg" alt="Ethereal Lehenga" />
         <div class="pc-info">
           <h4>Ethereal Lehenga</h4>
           <p class="price">₹33,999</p>
@@ -88,18 +113,19 @@
     </div>
   </section>
 
+  <!-- FOOTER (3 columns) -->
   <footer class="footer">
-    <div class="footer-grid">
-      <div>
+    <div class="footer-container">
+      <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
           <li><a href="about.html">About</a></li>
-          <li><a href="collections.html#aurora">Aurora</a></li>
-          <li><a href="collections.html#noir">Noir Luxe</a></li>
-          <li><a href="collections.html#ethereal">Ethereal</a></li>
+          <li><a href="#Aurora">Aurora</a></li>
+          <li><a href="#Noir">Noir Luxe</a></li>
+          <li><a href="#Ethereal">Ethereal</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>Help</h4>
         <ul>
           <li><a href="#">FAQ</a></li>
@@ -108,9 +134,9 @@
           <li><a href="#">Privacy Policy</a></li>
         </ul>
       </div>
-      <div>
+      <div class="footer-col">
         <h4>Follow</h4>
-        <div class="socials">
+        <div class="social-icons">
           <a href="#"><i class="ri-instagram-line"></i></a>
           <a href="#"><i class="ri-facebook-circle-line"></i></a>
           <a href="#"><i class="ri-pinterest-line"></i></a>
@@ -118,10 +144,30 @@
         </div>
       </div>
     </div>
-    <p class="copy">© 2025 AXELR — Designed by Harshit Sharma</p>
+    <p class="footer-copy">© 2025 AXELR — Designed by Harshit Sharma</p>
   </footer>
 
-  <a class="whatsapp-fab" href="https://wa.me/917505585951" target="_blank"><i class="ri-whatsapp-line"></i></a>
-  <script src="assets/js/script.js"></script>
+  <!-- Quick View Modal -->
+  <div class="modal" id="quickView" aria-hidden="true">
+    <div class="modal-dialog">
+      <button class="modal-close" data-close aria-label="Close"><i class="ri-close-line"></i></button>
+      <img id="qvImg" alt="Product">
+      <div class="modal-info">
+        <h3 id="qvTitle">Title</h3>
+        <p id="qvPrice" class="price">Price</p>
+        <div class="modal-actions">
+          <a class="btn" href="https://wa.me/918219673715" target="_blank">
+            <i class="ri-whatsapp-line" style="margin-right:.4rem"></i>Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a class="whatsapp-fab" href="https://wa.me/918219673715" target="_blank">
+    <i class="ri-whatsapp-line"></i>
+  </a>
+
+  <script src="assets/js/collections.js"></script>
 </body>
 </html>
