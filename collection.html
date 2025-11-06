@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Collections | AXELR</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="scroll-progress"><span></span></div>
+  <div class="page-transition"></div>
+
+  <!-- ===== Topbar ===== -->
+  <div class="topbar">
+    FOR BEST PRICES & INTERNATIONAL DELIVERIES, WHATSAPP :
+    <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
+  </div>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-transition>AXELR</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" data-transition>Home</a>
+      <a href="collections.html" class="active" data-transition>Collections</a>
+      <a href="about.html" data-transition>About</a>
+      <a href="contact.html" data-transition>Contact</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="ri-sun-line"></i></button>
+    </nav>
+    <button class="hamburger" id="hamburger"><i class="ri-menu-line"></i></button>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="page-hero small" style="background: linear-gradient(180deg, #fdfaff, #fff);">
+    <h1 class="gradient-heading">Collections</h1>
+    <p>Curated edits from AXELR ateliers — timeless, elegant, Indian at heart.</p>
+  </section>
+
+  <!-- ===== Filters ===== -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Aurora">Aurora</button>
+    <button class="filter-btn" data-filter="Noir Luxe">Noir Luxe</button>
+    <button class="filter-btn" data-filter="Ethereal Line">Ethereal</button>
+  </div>
+
+  <!-- ===== Product Grid ===== -->
+  <section class="products">
+    <div class="product-grid" id="productGrid">
+
+      <!-- Aurora -->
+      <div class="product-card" data-cat="Aurora" data-images='["assets/img/aurora1.jpg", "assets/img/aurora2.jpg", "assets/img/aurora3.jpg"]'>
+        <img src="assets/img/aurora1.jpg" alt="Aurora Mirrorwork Set">
+        <div class="product-overlay">
+          <h4>Aurora Mirrorwork Set</h4>
+          <span class="price">₹32,999</span>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="Aurora" data-images='["assets/img/aurora4.jpg", "assets/img/aurora5.jpg"]'>
+        <img src="assets/img/aurora4.jpg" alt="Aurora Silk Gown">
+        <div class="product-overlay">
+          <h4>Aurora Silk Gown</h4>
+          <span class="price">₹28,999</span>
+        </div>
+      </div>
+
+      <!-- Noir -->
+      <div class="product-card" data-cat="Noir Luxe" data-images='["assets/img/noir1.jpg", "assets/img/noir2.jpg"]'>
+        <img src="assets/img/noir1.jpg" alt="Noir Luxe Sari">
+        <div class="product-overlay">
+          <h4>Noir Luxe Sari</h4>
+          <span class="price">₹24,499</span>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="Noir Luxe" data-images='["assets/img/noir3.jpg", "assets/img/noir4.jpg"]'>
+        <img src="assets/img/noir3.jpg" alt="Noir Jacket">
+        <div class="product-overlay">
+          <h4>Noir Embellished Jacket</h4>
+          <span class="price">₹29,499</span>
+        </div>
+      </div>
+
+      <!-- Ethereal -->
+      <div class="product-card" data-cat="Ethereal Line" data-images='["assets/img/ethereal1.jpg", "assets/img/ethereal2.jpg"]'>
+        <img src="assets/img/ethereal1.jpg" alt="Ethereal Anarkali">
+        <div class="product-overlay">
+          <h4>Ethereal Anarkali</h4>
+          <span class="price">₹26,999</span>
+        </div>
+      </div>
+
+      <div class="product-card" data-cat="Ethereal Line" data-images='["assets/img/ethereal3.jpg", "assets/img/ethereal4.jpg"]'>
+        <img src="assets/img/ethereal3.jpg" alt="Ethereal Lehenga">
+        <div class="product-overlay">
+          <h4>Ethereal Lehenga</h4>
+          <span class="price">₹33,999</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <p class="copy">© 2025 AXELR — Designed by Harshit Sharma</p>
+  </footer>
+
+  <!-- ===== Modal Gallery ===== -->
+  <div class="modal" id="galleryModal">
+    <div class="modal-dialog">
+      <button class="modal-close" id="closeGallery"><i class="ri-close-line"></i></button>
+      <div class="gallery-container">
+        <img id="galleryMain" src="" alt="Product Preview">
+        <div class="thumbs" id="galleryThumbs"></div>
+      </div>
+      <a href="https://wa.me/918219673715" target="_blank" class="btn"><i class="ri-whatsapp-line"></i> Order on WhatsApp</a>
+    </div>
+  </div>
+
+  <a class="whatsapp-fab" href="https://wa.me/918219673715" target="_blank"><i class="ri-whatsapp-line"></i></a>
+
+  <script>
+    // Quick Gallery Modal Script
+    const cards = document.querySelectorAll('.product-card');
+    const modal = document.getElementById('galleryModal');
+    const galleryMain = document.getElementById('galleryMain');
+    const galleryThumbs = document.getElementById('galleryThumbs');
+    const closeGallery = document.getElementById('closeGallery');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const imgs = JSON.parse(card.dataset.images);
+        galleryMain.src = imgs[0];
+        galleryThumbs.innerHTML = imgs.map(i => `<img src="${i}" alt="" class="thumb">`).join('');
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+
+        document.querySelectorAll('.thumb').forEach(t => {
+          t.addEventListener('click', () => galleryMain.src = t.src);
+        });
+      });
+    });
+
+    closeGallery.addEventListener('click', () => {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  </script>
+</body>
+</html>
+

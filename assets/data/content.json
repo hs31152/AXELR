@@ -1,0 +1,30 @@
+{
+  "brand": "AXELR",
+  "whatsapp": "+918219673715",
+  "topbarText": "FOR BEST PRICES AND INTERNATIONAL DELIVERIES, WHATSAPP US AT :",
+  "about": {
+    "headline": "Our Story",
+    "paragraphs": [
+      "AXELR is a modern Indian label that merges tradition with expression. Created for dreamers and doers, it celebrates individuality through timeless design and thoughtful craftsmanship.",
+      "Inspired by Indian roots and global sensibilities, each AXELR piece tells a story — of culture, confidence, and creativity."
+    ],
+    "values": [
+      { "icon": "ri-scissors-2-line", "title": "Craftsmanship", "text": "Every design is hand-finished with precision and love." },
+      { "icon": "ri-star-line", "title": "Empowerment", "text": "Designed by women, for women — redefining luxury identity." }
+    ]
+  },
+  "collections": [
+    {
+      "name": "Aurora",
+      "products": [
+        { "title": "Aurora Mirrorwork Set", "price": "₹32,999", "image": "https://images.unsplash.com/photo-1603575449299-b5a5ce1f3a60?q=80&w=1200&auto=format&fit=crop" }
+      ]
+    },
+    {
+      "name": "Noir Luxe",
+      "products": [
+        { "title": "Noir Luxe Gown", "price": "₹28,499", "image": "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" }
+      ]
+    }
+  ]
+}

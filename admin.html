@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXELR Admin Panel</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background:#f5f5f7; padding:2rem; }
+    .admin-container { max-width:900px; margin:auto; background:#fff; border-radius:12px; padding:2rem; box-shadow:0 8px 24px rgba(0,0,0,0.08); }
+    input, textarea { width:100%; padding:0.8rem; margin-bottom:1rem; border-radius:8px; border:1px solid #ddd; }
+    button { background:linear-gradient(90deg,#a855f7,#ec4899); color:#fff; border:none; padding:0.8rem 1.6rem; border-radius:8px; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+  <div class="admin-container">
+    <h1>AXELR Admin Panel</h1>
+    <p>Edit site content and click “Save Changes” to update instantly.</p>
+
+    <label>WhatsApp Number:</label>
+    <input id="whatsapp" />
+
+    <label>About Paragraph 1:</label>
+    <textarea id="about1"></textarea>
+
+    <label>About Paragraph 2:</label>
+    <textarea id="about2"></textarea>
+
+    <label>Add Collection (Name):</label>
+    <input id="collectionName" placeholder="e.g., Ethereal"/>
+
+    <button onclick="saveData()">💾 Save Changes</button>
+  </div>
+
+  <script>
+    let content;
+    async function loadAdmin() {
+      const res = await fetch('/api/content');
+      content = await res.json();
+      document.getElementById('whatsapp').value = content.whatsapp;
+      document.getElementById('about1').value = content.about.paragraphs[0];
+      document.getElementById('about2').value = content.about.paragraphs[1];
+    }
+
+    async function saveData() {
+      content.whatsapp = document.getElementById('whatsapp').value;
+      content.about.paragraphs[0] = document.getElementById('about1').value;
+      content.about.paragraphs[1] = document.getElementById('about2').value;
+      await fetch('/api/save', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(content) });
+      alert('✅ Changes saved!');
+    }
+
+    loadAdmin();
+  </script>
+</body>
+</html>
