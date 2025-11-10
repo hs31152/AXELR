@@ -5,7 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AXELR — Modern Indian Luxury</title>
 
-  <!-- CSS & Fonts -->
+  <!-- ===== FAVICON & BRAND META ===== -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180x180.png">
+  <link rel="manifest" href="assets/img/site.webmanifest">
+
+  <meta name="theme-color" content="#1a1333">
+  <meta name="application-name" content="AXELR">
+  <meta name="apple-mobile-web-app-title" content="AXELR">
+
+  <!-- ===== SOCIAL PREVIEW (Open Graph) ===== -->
+  <meta property="og:title" content="AXELR — Modern Indian Luxury Wear">
+  <meta property="og:description" content="Explore AXELR's curated luxury Indian wear collections — where elegance meets craftsmanship.">
+  <meta property="og:image" content="assets/img/favicon-180x180.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AXELR">
+
+  <!-- ===== CSS & FONTS ===== -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
@@ -23,36 +40,30 @@
     <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
   </div>
 
-  <!-- ===== NAVBAR START ===== -->
- <!-- ===== NAVBAR START ===== -->
-<header class="navbar" id="navbar">
-  <a class="logo" href="index.html" data-transition>AXELR</a>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-transition>AXELR</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html" data-transition>Shop</a>
+      <a href="collections.html" data-transition>Collections</a>
+      <a href="celebrity.html" data-transition>Celebrity Style</a>
+      <a href="influencer.html" data-transition>Influencer Style</a>
+      <a href="about.html" data-transition>About</a>
+      <a href="blog.html" data-transition>Blog</a>
+    </nav>
 
-  <nav class="nav-links" id="navLinks">
-    <a href="shop.html" data-transition>Shop</a>
-    <a href="collections.html" data-transition>Collections</a>
-    <a href="celebrity.html" data-transition>Celebrity Style</a>
-    <a href="influencer.html" data-transition>Influencer Style</a>
-    <a href="about.html" data-transition>About</a>
-    <a href="blog.html" data-transition>Blog</a>
-  </nav>
+    <div class="nav-icons">
+      <a href="account.html" title="Account" data-transition><i class="ri-user-line"></i></a>
+      <a href="wishlist.html" title="Wishlist" data-transition><i class="ri-heart-line"></i></a>
+      <a href="search.html" title="Search" data-transition><i class="ri-search-line"></i></a>
+      <a href="cart.html" title="Cart" data-transition><i class="ri-shopping-bag-2-line"></i></a>
+    </div>
 
-  <div class="nav-icons">
-    <a href="account.html" title="Account" data-transition><i class="ri-user-line"></i></a>
-    <a href="wishlist.html" title="Wishlist" data-transition><i class="ri-heart-line"></i></a>
-    <a href="search.html" title="Search" data-transition><i class="ri-search-line"></i></a>
-    <a href="cart.html" title="Cart" data-transition><i class="ri-shopping-bag-2-line"></i></a>
-  </div>
-
-  <!-- Hamburger for mobile -->
-  <button class="hamburger" id="hamburger">
-    <i class="ri-menu-line"></i>
-  </button>
-</header>
-<!-- ===== NAVBAR END ===== -->
-
-  <!-- ===== NAVBAR END ===== -->
-
+    <!-- Hamburger (Mobile Menu) -->
+    <button class="hamburger" id="hamburger">
+      <i class="ri-menu-line"></i>
+    </button>
+  </header>
 
   <!-- ===== HERO ===== -->
   <section class="hero" id="hero">
@@ -70,7 +81,6 @@
     </div>
   </section>
 
-
   <!-- ===== CELEBRITY STRIPE ===== -->
   <section class="stripe reveal">
     <h3>Celebrity & Influencer Looks</h3>
@@ -82,7 +92,6 @@
       <img src="assets/img/opo10.jpg" alt="">
     </div>
   </section>
-
 
   <!-- ===== SHOP BY CATEGORY ===== -->
   <section class="category">
@@ -116,7 +125,6 @@
       </a>
     </div>
   </section>
-
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
@@ -155,14 +163,12 @@
     <p class="footer-copy">© 2025 AXELR — Designed by Harshit Sharma</p>
   </footer>
 
-
   <!-- ===== WHATSAPP FAB ===== -->
   <a class="whatsapp-fab" href="https://wa.me/918219673715" target="_blank">
     <i class="ri-whatsapp-line"></i>
   </a>
 
-  <!-- JS -->
+  <!-- ===== JS ===== -->
   <script src="assets/js/script.js"></script>
-
 </body>
 </html>
