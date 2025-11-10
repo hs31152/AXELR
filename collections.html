@@ -5,169 +5,313 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Collections | AXELR</title>
   <link rel="stylesheet" href="assets/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    .page-transition {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: #fff;
+      transform: scaleY(1);
+      transform-origin: top;
+      z-index: 9999;
+      transition: transform 0.45s ease;
+    }
+    .page-transition.hide { transform: scaleY(0); }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
+      justify-content: center;
+    }
+    .collection-card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+    .collection-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+    .collection-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+    .collection-info {
+      padding: 1rem;
+      text-align: center;
+    }
+    .collection-info h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .collection-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+  </style>
 </head>
 <body>
-  <div class="scroll-progress"><span></span></div>
 
-  <!-- Top bar -->
+  <div class="scroll-progress"><span></span></div>
+  <div class="page-transition"></div>
+
   <div class="topbar">
     FOR BEST PRICES & INTERNATIONAL DELIVERIES, WHATSAPP :
     <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
   </div>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <a class="logo" href="index.html">AXELR</a>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-transition>AXELR</a>
     <nav class="nav-links" id="navLinks">
-      <a href="index.html">Home</a>
-      <a href="collections.html" class="active">Collections</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="shop.html" data-transition>Shop</a>
+      <a href="collections.html" class="active" data-transition>Collections</a>
+      <a href="celebrity.html" data-transition>Celebrity Style</a>
+      <a href="influencer.html" data-transition>Influencer Style</a>
+      <a href="about.html" data-transition>About</a>
+      <a href="blog.html" data-transition>Blog</a>
     </nav>
-    <button class="hamburger" id="hamburger"><i class="ri-menu-line"></i></button>
+    <div class="nav-icons">
+      <a href="account.html"><i class="ri-user-line"></i></a>
+      <a href="wishlist.html"><i class="ri-heart-line"></i></a>
+      <a href="search.html"><i class="ri-search-line"></i></a>
+      <a href="cart.html"><i class="ri-shopping-bag-2-line"></i></a>
+    </div>
   </header>
 
-  <!-- Page hero -->
+  <!-- HERO -->
   <section class="page-hero small">
     <h1 class="gradient-heading">Collections</h1>
-    <p>Curated edits from AXELR ateliers.</p>
+    <p>Explore our timeless collections designed for modern elegance.</p>
   </section>
 
-  <!-- Filters -->
+  <!-- FILTERS -->
   <div class="filters-wrap">
     <div class="filter-bar">
       <button class="filter-chip active" data-filter="all">All</button>
-      <button class="filter-chip" data-filter="Aurora" id="Aurora">Aurora</button>
-      <button class="filter-chip" data-filter="Noir Luxe" id="Noir">Noir Luxe</button>
-      <button class="filter-chip" data-filter="Ethereal Line" id="Ethereal">Ethereal</button>
+      <button class="filter-chip" data-filter="Aurora">Aurora</button>
+      <button class="filter-chip" data-filter="Noir Luxe">Noir Luxe</button>
+      <button class="filter-chip" data-filter="Ethereal">Ethereal</button>
+      <button class="filter-chip" data-filter="Urban Zen">Urban Zen</button>
     </div>
   </div>
 
-  <!-- Products grid -->
+  <!-- PRODUCTS GRID -->
   <section class="products">
-    <div class="product-grid" id="productGrid">
-      <!-- Aurora -->
-      <a class="product-card" data-cat="Aurora"
-         data-title="Aurora Mirrorwork Set" data-price="₹32,999"
-         data-image="assets/img/opo1.jpg">
-        <img src="assets/img/opo1.jpg" alt="Aurora Mirrorwork Set" />
-        <div class="pc-info">
-          <h4>Aurora Mirrorwork Set</h4>
+    <div class="product-grid">
+
+      <!-- AURORA -->
+      <div class="collection-card" data-category="Aurora" data-title="Dewdrop" data-price="₹32,999" data-image="assets/img/aurora1.jpg">
+        <img src="assets/img/q6.jpg" alt="Dewdrop">
+        <div class="collection-info">
+          <h4>Dewdrop</h4>
           <p class="price">₹32,999</p>
+          <div class="collection-actions">
+            <button class="btn add-cart">Add to Cart</button>
+            <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+          </div>
         </div>
-      </a>
+      </div>
 
-      <a class="product-card" data-cat="Aurora"
-         data-title="Aurora Silk Gown" data-price="₹28,999"
-         data-image="assets/img/aurora4.jpg">
-        <img src="assets/img/opo6.jpg" alt="Aurora Silk Gown" />
-        <div class="pc-info">
-          <h4>Aurora Silk Gown</h4>
-          <p class="price">₹28,999</p>
+      <div class="collection-card" data-category="Aurora" data-title="Chique" data-price="₹28,499" data-image="assets/img/aurora2.jpg">
+        <img src="assets/img/q7.jpg" alt="Chique">
+        <div class="collection-info">
+          <h4>Chique</h4>
+          <p class="price">₹28,499</p>
+          <div class="collection-actions">
+            <button class="btn add-cart">Add to Cart</button>
+            <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+          </div>
         </div>
-      </a>
+      </div>
 
-      <!-- Noir -->
-      <a class="product-card" data-cat="Noir Luxe"
-         data-title="Noir Luxe Sari" data-price="₹24,499"
-         data-image="assets/img/noir1.jpg">
-        <img src="assets/img/opo3.jpg" alt="Noir Luxe Sari" />
-        <div class="pc-info">
-          <h4>Noir Luxe Sari</h4>
-          <p class="price">₹24,499</p>
+      <!-- NOIR -->
+      <div class="collection-card" data-category="Noir Luxe" data-title="Opuluxe" data-price="₹34,999" data-image="assets/img/noir1.jpg">
+        <img src="assets/img/q8.jpg" alt="Opuluxe">
+        <div class="collection-info">
+          <h4>Opuluxe</h4>
+          <p class="price">₹34,999</p>
+          <div class="collection-actions">
+            <button class="btn add-cart">Add to Cart</button>
+            <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+          </div>
         </div>
-      </a>
+      </div>
 
-      <a class="product-card" data-cat="Noir Luxe"
-         data-title="Noir Embellished Jacket" data-price="₹29,499"
-         data-image="assets/img/noir3.jpg">
-        <img src="assets/img/opo4.jpg" alt="Noir Embellished Jacket" />
-        <div class="pc-info">
-          <h4>Noir Embellished Jacket</h4>
-          <p class="price">₹29,499</p>
+      <div class="collection-card" data-category="Noir Luxe" data-title="Regalia" data-price="₹25,999" data-image="assets/img/noir2.jpg">
+        <img src="assets/img/q9.jpg" alt="Regalia">
+        <div class="collection-info">
+          <h4>Regalia</h4>
+          <p class="price">₹25,999</p>
+          <div class="collection-actions">
+            <button class="btn add-cart">Add to Cart</button>
+            <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+          </div>
         </div>
-      </a>
+      </div>
 
-      <!-- Ethereal -->
-      <a class="product-card" data-cat="Ethereal Line"
-         data-title="Ethereal Anarkali" data-price="₹26,999"
-         data-image="assets/img/ethereal1.jpg">
-        <img src="assets/img/opo5.jpg" alt="Ethereal Anarkali" />
-        <div class="pc-info">
-          <h4>Ethereal Anarkali</h4>
+      <!-- ETHEREAL -->
+      <div class="collection-card" data-category="Ethereal" data-title="Patchouli" data-price="₹27,499" data-image="assets/img/ethereal1.jpg">
+        <img src="assets/img/q1.jpg" alt="Patchouli">
+        <div class="collection-info">
+          <h4>Patchouli</h4>
+          <p class="price">₹27,499</p>
+          <div class="collection-actions">
+            <button class="btn add-cart">Add to Cart</button>
+            <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="collection-card" data-category="Ethereal" data-title="Falak Numa" data-price="₹29,999" data-image="assets/img/ethereal2.jpg">
+        <img src="assets/img/q2.jpg" alt="Falak Numa">
+        <div class="collection-info">
+          <h4>Falak Numa</h4>
+          <p class="price">₹29,999</p>
+          <div class="collection-actions">
+            <button class="btn add-cart">Add to Cart</button>
+            <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- URBAN ZEN -->
+      <div class="collection-card" data-category="Urban Zen" data-title="Jhilmil" data-price="₹31,499" data-image="assets/img/urban1.jpg">
+        <img src="assets/img/q3.jpg" alt="Jhilmil">
+        <div class="collection-info">
+          <h4>Jhilmil</h4>
+          <p class="price">₹31,499</p>
+          <div class="collection-actions">
+            <button class="btn add-cart">Add to Cart</button>
+            <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="collection-card" data-category="Urban Zen" data-title="Rushat" data-price="₹26,999" data-image="assets/img/urban2.jpg">
+        <img src="assets/img/q4.jpg" alt="Rushat">
+        <div class="collection-info">
+          <h4>Rushat</h4>
           <p class="price">₹26,999</p>
+          <div class="collection-actions">
+            <button class="btn add-cart">Add to Cart</button>
+            <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+          </div>
         </div>
-      </a>
+      </div>
 
-      <a class="product-card" data-cat="Ethereal Line"
-         data-title="Ethereal Lehenga" data-price="₹33,999"
-         data-image="assets/img/ethereal2.jpg">
-        <img src="assets/img/opo8.jpg" alt="Ethereal Lehenga" />
-        <div class="pc-info">
-          <h4>Ethereal Lehenga</h4>
-          <p class="price">₹33,999</p>
+      <div class="collection-card" data-category="Urban Zen" data-title="Gelati" data-price="₹28,499" data-image="assets/img/urban3.jpg">
+        <img src="assets/img/q5.jpg" alt="Gelati">
+        <div class="collection-info">
+          <h4>Gelati</h4>
+          <p class="price">₹28,499</p>
+          <div class="collection-actions">
+            <button class="btn add-cart">Add to Cart</button>
+            <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+          </div>
         </div>
-      </a>
+      </div>
+
     </div>
   </section>
 
-  <!-- FOOTER (3 columns) -->
+  <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#Aurora">Aurora</a></li>
-          <li><a href="#Noir">Noir Luxe</a></li>
-          <li><a href="#Ethereal">Ethereal</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Help</h4>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Refund Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
-        <div class="social-icons">
-          <a href="#"><i class="ri-instagram-line"></i></a>
-          <a href="#"><i class="ri-facebook-circle-line"></i></a>
-          <a href="#"><i class="ri-pinterest-line"></i></a>
-          <a href="#"><i class="ri-twitter-x-line"></i></a>
-        </div>
-      </div>
-    </div>
     <p class="footer-copy">© 2025 AXELR — Designed by Harshit Sharma</p>
   </footer>
 
-  <!-- Quick View Modal -->
-  <div class="modal" id="quickView" aria-hidden="true">
-    <div class="modal-dialog">
-      <button class="modal-close" data-close aria-label="Close"><i class="ri-close-line"></i></button>
-      <img id="qvImg" alt="Product">
-      <div class="modal-info">
-        <h3 id="qvTitle">Title</h3>
-        <p id="qvPrice" class="price">Price</p>
-        <div class="modal-actions">
-          <a class="btn" href="https://wa.me/918219673715" target="_blank">
-            <i class="ri-whatsapp-line" style="margin-right:.4rem"></i>Order on WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- ✅ CART / WISHLIST / FILTER SCRIPT -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const transition = document.querySelector(".page-transition");
+    const links = document.querySelectorAll("[data-transition]");
+    const cartBtns = document.querySelectorAll(".add-cart");
+    const wishlistBtns = document.querySelectorAll(".add-wishlist");
+    const filterBtns = document.querySelectorAll(".filter-chip");
+    const cards = document.querySelectorAll(".collection-card");
 
-  <a class="whatsapp-fab" href="https://wa.me/918219673715" target="_blank">
-    <i class="ri-whatsapp-line"></i>
-  </a>
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
-  <script src="assets/js/collections.js"></script>
+    const saveCart = () => localStorage.setItem("cart", JSON.stringify(cart));
+    const saveWishlist = () => localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+    // ✅ Add to Cart
+    cartBtns.forEach(btn => {
+      btn.addEventListener("click", e => {
+        const card = e.target.closest(".collection-card");
+        const item = {
+          name: card.dataset.title,
+          price: card.dataset.price,
+          img: card.dataset.image
+        };
+        cart.push(item);
+        saveCart();
+        btn.textContent = "Added ✓";
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = "Add to Cart"; btn.disabled = false; }, 1200);
+      });
+    });
+
+    // ✅ Add to Wishlist
+    wishlistBtns.forEach(btn => {
+      btn.addEventListener("click", e => {
+        const card = e.target.closest(".collection-card");
+        const item = {
+          name: card.dataset.title,
+          price: card.dataset.price,
+          img: card.dataset.image
+        };
+        const exists = wishlist.some(p => p.name === item.name);
+        if (!exists) {
+          wishlist.push(item);
+          saveWishlist();
+          btn.innerHTML = '<i class="ri-heart-fill"></i>';
+          btn.style.color = "#ec4899";
+        } else {
+          wishlist = wishlist.filter(p => p.name !== item.name);
+          saveWishlist();
+          btn.innerHTML = '<i class="ri-heart-line"></i>';
+          btn.style.color = "";
+        }
+      });
+    });
+
+    // ✅ Filter functionality
+    filterBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const cat = btn.dataset.filter;
+        cards.forEach(card => {
+          card.style.display = (cat === "all" || card.dataset.category === cat) ? "block" : "none";
+        });
+      });
+    });
+
+    // ✅ Page transition
+    setTimeout(() => transition.classList.add("hide"), 200);
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const href = link.getAttribute("href");
+        transition.classList.remove("hide");
+        setTimeout(() => (window.location.href = href), 400);
+      });
+    });
+  });
+  </script>
+
 </body>
 </html>

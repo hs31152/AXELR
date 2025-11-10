@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop | AXELR</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    /* transition fix */
+    .page-transition {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: #fff;
+      transform: scaleY(1);
+      transform-origin: top;
+      z-index: 9999;
+      transition: transform 0.45s ease;
+    }
+    .page-transition.hide { transform: scaleY(0); }
+
+    /* premium look */
+    .products {
+      padding: 4rem 6%;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .shop-card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .shop-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    .shop-card img {
+      width: 100%;
+      height: 460px;
+      object-fit: cover;
+    }
+
+    .shop-info {
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .shop-info h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      color: #1b1031;
+      margin-bottom: .3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .shop-info .price {
+      font-weight: 700;
+      color: #6c4bb6;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .shop-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .btn {
+      background: linear-gradient(90deg, #8b5cf6, #ec4899);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 0.7rem 1.6rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(236,72,153,0.3);
+    }
+
+    .btn-outline {
+      border: 2px solid #ec4899;
+      background: none;
+      color: #ec4899;
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .btn-outline:hover {
+      background: #ec4899;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll bar -->
+  <div class="scroll-progress"><span></span></div>
+  <div class="page-transition"></div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    FOR BEST PRICES & INTERNATIONAL DELIVERIES, WHATSAPP:
+    <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
+  </div>
+
+  <!-- ===== NAVBAR START ===== -->
+  <header class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-transition>AXELR</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html" class="active" data-transition>Shop</a>
+      <a href="collections.html" data-transition>Collections</a>
+      <a href="celebrity.html" data-transition>Celebrity Style</a>
+      <a href="influencer.html" data-transition>Influencer Style</a>
+      <a href="about.html" data-transition>About</a>
+      <a href="blog.html" data-transition>Blog</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="account.html" title="Account" data-transition><i class="ri-user-line"></i></a>
+      <a href="wishlist.html" title="Wishlist" data-transition><i class="ri-heart-line"></i></a>
+      <a href="search.html" title="Search" data-transition><i class="ri-search-line"></i></a>
+      <a href="cart.html" title="Cart" data-transition><i class="ri-shopping-bag-2-line"></i></a>
+    </div>
+  </header>
+  <!-- ===== NAVBAR END ===== -->
+
+  <!-- Page Hero -->
+  <section class="page-hero small">
+    <h1 class="gradient-heading">Shop</h1>
+    <p>Discover our latest luxury wear.</p>
+  </section>
+
+  <!-- Products Section -->
+  <main>
+    <section class="products">
+      <div class="product-grid">
+
+        <div class="shop-card" data-title="Kurta Set" data-price="₹29,999" data-image="assets/img/opo1.jpg">
+          <img src="assets/img/opo1.jpg" alt="Kurta Set">
+          <div class="shop-info">
+            <h4>Kurta Set</h4>
+            <p class="price">₹29,999</p>
+            <div class="shop-actions">
+              <button class="btn add-cart">Add to Cart</button>
+              <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="shop-card" data-title="Lehenga" data-price="₹35,499" data-image="assets/img/opo5.jpg">
+          <img src="assets/img/opo5.jpg" alt="Lehenga">
+          <div class="shop-info">
+            <h4>Lehenga</h4>
+            <p class="price">₹35,499</p>
+            <div class="shop-actions">
+              <button class="btn add-cart">Add to Cart</button>
+              <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="shop-card" data-title="Saree" data-price="₹26,999" data-image="assets/img/opo3.jpg">
+          <img src="assets/img/opo3.jpg" alt="Saree">
+          <div class="shop-info">
+            <h4>Saree</h4>
+            <p class="price">₹26,999</p>
+            <div class="shop-actions">
+              <button class="btn add-cart">Add to Cart</button>
+              <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="shop-card" data-title="Gown" data-price="₹38,999" data-image="assets/img/opo6.jpg">
+          <img src="assets/img/opo6.jpg" alt="Gown">
+          <div class="shop-info">
+            <h4>Gown</h4>
+            <p class="price">₹38,999</p>
+            <div class="shop-actions">
+              <button class="btn add-cart">Add to Cart</button>
+              <button class="btn-outline add-wishlist"><i class="ri-heart-line"></i></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer-copy">© 2025 AXELR — Designed by Harshit Sharma</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const transition = document.querySelector(".page-transition");
+    const links = document.querySelectorAll("[data-transition]");
+    const cartBtns = document.querySelectorAll(".add-cart");
+    const wishlistBtns = document.querySelectorAll(".add-wishlist");
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    const saveCart = () => localStorage.setItem("cart", JSON.stringify(cart));
+    const saveWishlist = () => localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+    // ✅ Add to Cart
+    cartBtns.forEach(btn => {
+      btn.addEventListener("click", e => {
+        const card = e.target.closest(".shop-card");
+        const item = {
+          name: card.dataset.title,
+          price: card.dataset.price,
+          img: card.dataset.image
+        };
+        cart.push(item);
+        saveCart();
+        btn.textContent = "Added ✓";
+        btn.disabled = true;
+        setTimeout(() => { btn.textContent = "Add to Cart"; btn.disabled = false; }, 1200);
+      });
+    });
+
+    // ✅ Add to Wishlist
+    wishlistBtns.forEach(btn => {
+      btn.addEventListener("click", e => {
+        const card = e.target.closest(".shop-card");
+        const item = {
+          name: card.dataset.title,
+          price: card.dataset.price,
+          img: card.dataset.image
+        };
+        const exists = wishlist.some(p => p.name === item.name);
+        if (!exists) {
+          wishlist.push(item);
+          saveWishlist();
+          btn.innerHTML = '<i class="ri-heart-fill"></i>';
+          btn.style.color = "#ec4899";
+        } else {
+          wishlist = wishlist.filter(p => p.name !== item.name);
+          saveWishlist();
+          btn.innerHTML = '<i class="ri-heart-line"></i>';
+          btn.style.color = "";
+        }
+      });
+    });
+
+    // ✅ Page Transition
+    setTimeout(() => transition.classList.add("hide"), 200);
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const href = link.getAttribute("href");
+        transition.classList.remove("hide");
+        setTimeout(() => (window.location.href = href), 400);
+      });
+    });
+  });
+  </script>
+</body>
+</html>

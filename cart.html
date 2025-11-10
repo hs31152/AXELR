@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cart | AXELR</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Page Transition -->
+  <div class="page-transition"></div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    FOR BEST PRICES & INTERNATIONAL DELIVERIES, WHATSAPP :
+    <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-transition>AXELR</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html" data-transition>Shop</a>
+      <a href="collections.html" data-transition>Collections</a>
+      <a href="celebrity.html" data-transition>Celebrity Style</a>
+      <a href="influencer.html" data-transition>Influencer Style</a>
+      <a href="about.html" data-transition>About</a>
+      <a href="blog.html" data-transition>Blog</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="account.html" title="Account" data-transition><i class="ri-user-line"></i></a>
+      <a href="wishlist.html" title="Wishlist" data-transition><i class="ri-heart-line"></i></a>
+      <a href="search.html" title="Search" data-transition><i class="ri-search-line"></i></a>
+      <a href="cart.html" class="active" title="Cart"><i class="ri-shopping-bag-2-line"></i></a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero small">
+    <h1 class="gradient-heading">Your Cart</h1>
+    <p>Review your luxury picks before checkout.</p>
+  </section>
+
+  <!-- CART SECTION -->
+  <section class="cart-section">
+    <div class="cart-container">
+      <div class="cart-items" id="cartItems"></div>
+
+      <div class="cart-summary" id="cartSummary">
+        <h3>Order Summary</h3>
+        <div class="summary-details">
+          <p>Subtotal: <span id="subtotal">₹0</span></p>
+          <p>Shipping: <span>Free</span></p>
+          <p class="total">Total: <span id="total">₹0</span></p>
+        </div>
+        <button class="btn checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <div class="empty-cart" style="display:none;">
+      <i class="ri-shopping-bag-line"></i>
+      <p>Your cart is empty.</p>
+      <a href="collections.html" class="btn" data-transition>Continue Shopping</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="collections.html#Aurora">Aurora</a></li>
+          <li><a href="collections.html#Noir">Noir Luxe</a></li>
+          <li><a href="collections.html#Ethereal">Ethereal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <div class="social-icons">
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-facebook-circle-line"></i></a>
+          <a href="#"><i class="ri-pinterest-line"></i></a>
+          <a href="#"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 AXELR — Designed by Harshit Sharma</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const transition = document.querySelector(".page-transition");
+    const links = document.querySelectorAll("[data-transition]");
+    const cartItems = document.getElementById("cartItems");
+    const emptyCart = document.querySelector(".empty-cart");
+    const subtotalEl = document.getElementById("subtotal");
+    const totalEl = document.getElementById("total");
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function formatPrice(price) {
+      return price.replace(/[^\d]/g, "");
+    }
+
+    function updateTotals() {
+      let subtotal = cart.reduce((acc, item) => acc + parseInt(formatPrice(item.price)), 0);
+      subtotalEl.textContent = "₹" + subtotal.toLocaleString("en-IN");
+      totalEl.textContent = "₹" + subtotal.toLocaleString("en-IN");
+    }
+
+    function renderCart() {
+      cartItems.innerHTML = "";
+      if (cart.length === 0) {
+        cartItems.style.display = "none";
+        document.querySelector(".cart-summary").style.display = "none";
+        emptyCart.style.display = "block";
+        return;
+      }
+
+      emptyCart.style.display = "none";
+      cartItems.style.display = "flex";
+      document.querySelector(".cart-summary").style.display = "block";
+
+      cart.forEach((item, i) => {
+        const row = document.createElement("div");
+        row.className = "cart-row";
+        row.innerHTML = `
+          <div class="cart-img"><img src="${item.img}" alt="${item.name}"></div>
+          <div class="cart-info">
+            <h3>${item.name}</h3>
+            <p class="price">${item.price}</p>
+            <div class="cart-controls">
+              <button class="qty-btn minus" data-index="${i}">−</button>
+              <span class="qty">1</span>
+              <button class="qty-btn plus" data-index="${i}">+</button>
+              <button class="remove-item" data-index="${i}"><i class="ri-delete-bin-line"></i></button>
+            </div>
+          </div>
+        `;
+        cartItems.appendChild(row);
+      });
+
+      updateTotals();
+    }
+
+    cartItems.addEventListener("click", e => {
+      const index = e.target.dataset.index;
+      if (e.target.closest(".remove-item")) {
+        cart.splice(index, 1);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        renderCart();
+      }
+    });
+
+    setTimeout(() => transition.classList.add("hide"), 150);
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const href = link.getAttribute("href");
+        transition.classList.remove("hide");
+        setTimeout(() => (window.location.href = href), 450);
+      });
+    });
+
+    renderCart();
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wishlist | AXELR</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="page-transition"></div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    FOR BEST PRICES & INTERNATIONAL DELIVERIES, WHATSAPP:
+    <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
+  </div>
+
+  <!-- ===== NAVBAR START ===== -->
+  <header class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-transition>AXELR</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html" data-transition>Shop</a>
+      <a href="collections.html" data-transition>Collections</a>
+      <a href="celebrity.html" data-transition>Celebrity Style</a>
+      <a href="influencer.html" data-transition>Influencer Style</a>
+      <a href="about.html" data-transition>About</a>
+      <a href="blog.html" data-transition>Blog</a>
+    </nav>
+
+    <div class="nav-icons">
+      <a href="account.html" title="Account"><i class="ri-user-line"></i></a>
+      <a href="wishlist.html" class="wishlist-icon active" title="Wishlist">
+        <i class="ri-heart-fill"></i>
+        <span id="wishlistCount" class="badge">0</span>
+      </a>
+      <a href="search.html"><i class="ri-search-line"></i></a>
+      <a href="cart.html"><i class="ri-shopping-bag-2-line"></i></a>
+    </div>
+
+    <button class="hamburger" id="hamburger"><i class="ri-menu-line"></i></button>
+  </header>
+  <!-- ===== NAVBAR END ===== -->
+
+  <!-- Wishlist Hero -->
+  <section class="page-hero small">
+    <h1 class="gradient-heading">Your Wishlist</h1>
+    <p>Curate your favorite AXELR pieces.</p>
+  </section>
+
+  <!-- Wishlist Section -->
+  <section class="wishlist-section">
+    <div class="wishlist-header">
+      <h2>Saved Items</h2>
+      <button id="moveAllToCart" class="btn">Move All to Cart</button>
+    </div>
+
+    <div id="wishlistContainer" class="wishlist-grid"></div>
+
+    <div id="emptyWishlist" class="empty-msg">
+      <i class="ri-heart-line"></i>
+      <h3>Your Wishlist is Empty</h3>
+      <p>Explore AXELR collections to find your next luxury outfit.</p>
+      <a href="shop.html" class="btn" data-transition>Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p class="footer-copy">© 2025 AXELR — Designed by Harshit Sharma</p>
+  </footer>
+
+  <script src="assets/js/wishlist.js"></script>
+
+  <style>
+    .wishlist-icon {
+      position: relative;
+    }
+
+    .wishlist-icon .badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: #ec4899;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: bold;
+      padding: 2px 6px;
+      border-radius: 999px;
+    }
+
+    .wishlist-section {
+      padding: 4rem 1.5rem;
+      background: linear-gradient(180deg, #fef9ff 0%, #ffffff 100%);
+      min-height: 70vh;
+    }
+
+    .wishlist-header {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wishlist-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .wishlist-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+    }
+
+    .wishlist-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgba(236,72,153,0.25);
+    }
+
+    .wishlist-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+
+    .wishlist-info {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .wishlist-info h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: #1a1333;
+    }
+
+    .wishlist-info .price {
+      font-weight: 700;
+      color: #3b2e68;
+      margin: 0.5rem 0;
+    }
+
+    .wishlist-actions {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+
+    .empty-msg {
+      text-align: center;
+      margin-top: 4rem;
+      display: none;
+    }
+
+    .empty-msg i {
+      font-size: 3rem;
+      color: #a855f7;
+      margin-bottom: 1rem;
+    }
+
+    .empty-msg h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+    }
+  </style>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Account | AXELR</title>
+
+  <!-- CSS + Fonts -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Transition -->
+  <div class="page-transition"></div>
+  <div class="scroll-progress"><span></span></div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    FOR BEST PRICES & INTERNATIONAL DELIVERIES, WHATSAPP :
+    <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-transition>AXELR</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html" data-transition>Shop</a>
+      <a href="collections.html" data-transition>Collections</a>
+      <a href="celebrity.html" data-transition>Celebrity Style</a>
+      <a href="influencer.html" data-transition>Influencer Style</a>
+      <a href="about.html" data-transition>About</a>
+      <a href="blog.html" data-transition>Blog</a>
+    </nav>
+
+    <div class="nav-icons">
+      <a href="account.html" title="Account" class="active" data-transition><i class="ri-user-line"></i></a>
+      <a href="wishlist.html" title="Wishlist" data-transition><i class="ri-heart-line"></i></a>
+      <a href="search.html" title="Search" data-transition><i class="ri-search-line"></i></a>
+      <a href="cart.html" title="Cart" data-transition><i class="ri-shopping-bag-2-line"></i></a>
+    </div>
+    <button class="hamburger" id="hamburger"><i class="ri-menu-line"></i></button>
+  </header>
+
+  <!-- Hero -->
+  <section class="page-hero small">
+    <h1 class="gradient-heading">My Account</h1>
+    <p>Manage your orders, wishlist, and personal details.</p>
+  </section>
+
+  <!-- Account Section -->
+  <section class="account-wrapper">
+    <div class="account-box">
+      <div class="account-tabs">
+        <button class="tab-btn active" data-tab="login">Login</button>
+        <button class="tab-btn" data-tab="register">Register</button>
+      </div>
+
+      <div class="tab-content active" id="login">
+        <h2>Welcome Back</h2>
+        <p>Sign in to access your account and continue shopping with AXELR.</p>
+        <form class="account-form">
+          <input type="email" placeholder="Email Address" required>
+          <input type="password" placeholder="Password" required>
+          <button type="submit" class="btn">Login</button>
+          <a href="#" class="forgot">Forgot password?</a>
+        </form>
+      </div>
+
+      <div class="tab-content" id="register">
+        <h2>Create Account</h2>
+        <p>Join AXELR and experience modern Indian luxury firsthand.</p>
+        <form class="account-form">
+          <input type="text" placeholder="Full Name" required>
+          <input type="email" placeholder="Email Address" required>
+          <input type="password" placeholder="Create Password" required>
+          <button type="submit" class="btn">Register</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="account-dashboard">
+      <h3>Your Dashboard</h3>
+      <div class="dashboard-grid">
+        <a href="orders.html" class="dash-card">
+          <i class="ri-truck-line"></i>
+          <h4>Orders</h4>
+          <p>Track your orders & returns</p>
+        </a>
+
+        <a href="wishlist.html" class="dash-card">
+          <i class="ri-heart-line"></i>
+          <h4>Wishlist</h4>
+          <p>View saved products</p>
+        </a>
+
+        <a href="address.html" class="dash-card">
+          <i class="ri-map-pin-line"></i>
+          <h4>Addresses</h4>
+          <p>Manage saved locations</p>
+        </a>
+
+        <a href="settings.html" class="dash-card">
+          <i class="ri-settings-3-line"></i>
+          <h4>Settings</h4>
+          <p>Change password, logout</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html" data-transition>About</a></li>
+          <li><a href="collections.html#Aurora" data-transition>Aurora</a></li>
+          <li><a href="collections.html#Noir" data-transition>Noir Luxe</a></li>
+          <li><a href="collections.html#Ethereal" data-transition>Ethereal</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <div class="social-icons">
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-facebook-circle-line"></i></a>
+          <a href="#"><i class="ri-pinterest-line"></i></a>
+          <a href="#"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 AXELR — Designed by Harshit Sharma</p>
+  </footer>
+
+  <!-- Transition Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const transition = document.querySelector(".page-transition");
+    const links = document.querySelectorAll("[data-transition]");
+
+    // Hide transition on load
+    setTimeout(() => {
+      transition.classList.remove("active");
+    }, 250);
+
+    // Add animation on link click
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        const href = link.getAttribute("href");
+        transition.classList.add("active");
+        setTimeout(() => {
+          window.location.href = href;
+        }, 450);
+      });
+    });
+
+    // Tab switching
+    const tabs = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+    tabs.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabs.forEach(b => b.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+  });
+  </script>
+
+</body>
+</html>

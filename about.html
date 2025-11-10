@@ -10,42 +10,59 @@
 </head>
 <body>
 
+  <div class="scroll-progress"><span></span></div>
+  <div class="page-transition"></div>
+
   <!-- Topbar -->
   <div class="topbar">
     FOR BEST PRICES & INTERNATIONAL DELIVERIES, WHATSAPP :
     <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
   </div>
 
-  <!-- Navbar -->
-  <header class="navbar">
-    <a class="logo" href="index.html">AXELR</a>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="collections.html">Collections</a>
-      <a href="about.html" class="active">About</a>
-      <a href="contact.html">Contact</a>
+  <!-- ===== NAVBAR START ===== -->
+  <header class="navbar" id="navbar">
+    <a class="logo" href="index.html" data-transition>AXELR</a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="shop.html" data-transition>Shop</a>
+      <a href="collections.html" data-transition>Collections</a>
+      <a href="celebrity.html" data-transition>Celebrity Style</a>
+      <a href="influencer.html" data-transition>Influencer Style</a>
+      <a href="about.html" class="active" data-transition>About</a>
+      <a href="blog.html" data-transition>Blog</a>
     </nav>
+
+    <div class="nav-icons">
+      <a href="account.html" title="Account"><i class="ri-user-line"></i></a>
+      <a href="wishlist.html" title="Wishlist"><i class="ri-heart-line"></i></a>
+      <a href="search.html" title="Search"><i class="ri-search-line"></i></a>
+      <a href="cart.html" title="Cart"><i class="ri-shopping-bag-2-line"></i></a>
+    </div>
+
+    <button class="hamburger" id="hamburger"><i class="ri-menu-line"></i></button>
   </header>
+  <!-- ===== NAVBAR END ===== -->
 
   <!-- About Hero -->
   <section class="about-hero">
-  <img src="assets/img/opo2.jpg" alt="About AXELR" class="about-bg-img" />
-  <div class="about-overlay"></div>
+    <div class="about-bg">
+      <img src="assets/img/alex.jpg" alt="About AXELR" />
+    </div>
+    <div class="about-overlay"></div>
 
-  <div class="about-content">
-    <h1>About <span>AXELR</span></h1>
-    <p>
-      Created for women, by women — rooted in traditions, inspired by modern aspirations.
-      Every AXELR piece embodies timeless craftsmanship blended with bold contemporary flair.
-    </p>
-  </div>
-</section>
-
+    <div class="about-content reveal">
+      <h1>About <span>AXELR</span></h1>
+      <p>
+        Created for women, by women — rooted in traditions, inspired by modern aspirations.  
+        Every AXELR piece embodies timeless craftsmanship blended with bold contemporary flair.
+      </p>
+    </div>
+  </section>
 
   <!-- Brand Story -->
   <section class="brand-story">
     <div class="story-container">
-      <div class="story-text">
+      <div class="story-text reveal">
         <h2>Our <span>Story</span></h2>
         <p>
           AXELR stands as a celebration of India’s evolving woman — confident, elegant, and unapologetically modern.  
@@ -53,12 +70,34 @@
           Our ateliers collaborate with master artisans across India, merging centuries-old craftsmanship with present-day design philosophies.
         </p>
         <p>
-          Sustainability lies at our heart — from ethically sourced fabrics to small-batch production, we believe in creating  
-          slow fashion that lasts a lifetime.
+          Sustainability lies at our heart — from ethically sourced fabrics to small-batch production,  
+          we believe in creating slow fashion that lasts a lifetime.
         </p>
       </div>
-      <div class="story-image">
-        <img src="assets/img/celeb5.jpg" alt="AXELR Craft" />
+      <div class="story-image reveal">
+        <img src="assets/img/prop.jpg" alt="AXELR Craft" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section class="about-values">
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <h3>Craftsmanship</h3>
+        <p>Each piece is hand-finished by master artisans with decades of heritage skill.</p>
+      </div>
+      <div class="value-card reveal">
+        <h3>Elegance</h3>
+        <p>Our designs merge minimalism with Indian cultural richness — effortless and timeless.</p>
+      </div>
+      <div class="value-card reveal">
+        <h3>Sustainability</h3>
+        <p>We prioritize natural fabrics, low-impact dyes, and slow fashion values.</p>
+      </div>
+      <div class="value-card reveal">
+        <h3>Innovation</h3>
+        <p>Modern silhouettes meet traditional craftsmanship to define new-age luxury.</p>
       </div>
     </div>
   </section>
@@ -97,5 +136,6 @@
     <p class="footer-copy">© 2025 AXELR — Designed by Harshit Sharma</p>
   </footer>
 
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
