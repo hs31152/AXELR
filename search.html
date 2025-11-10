@@ -1,11 +1,234 @@
-<section class="page-hero small">
-  <h1 class="gradient-heading">Search</h1>
-  <p>Find the perfect look across AXELR collections.</p>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Search | AXELR</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  <style>
+    /* ===== PAGE TRANSITION ===== */
+    .page-transition {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: #fff;
+      transform: scaleY(1);
+      transform-origin: top;
+      z-index: 9999;
+      transition: transform 0.45s ease;
+    }
+    .page-transition.hide { transform: scaleY(0); }
 
-<main>
-  <div class="contact-form" style="max-width:500px;margin:2rem auto;">
-    <input type="text" placeholder="Search for styles, colors, or categories...">
-    <button class="btn" style="margin-top:1rem;">Search</button>
+    /* ===== SEARCH HERO ===== */
+    .search-hero {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+    }
+    .search-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .search-hero p {
+      color: #6b5a87;
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .search-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 1rem auto 2rem;
+      max-width: 600px;
+      background: #fff;
+      border-radius: 40px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .search-box input {
+      flex: 1;
+      border: none;
+      padding: 1rem 1.4rem;
+      font-size: 1rem;
+      font-family: 'Outfit', sans-serif;
+      outline: none;
+      color: #1a1333;
+    }
+
+    .search-box button {
+      background: linear-gradient(90deg, #a855f7, #ec4899);
+      border: none;
+      color: #fff;
+      padding: 1rem 1.3rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    .search-box button:hover {
+      opacity: 0.85;
+      transform: scale(1.05);
+    }
+
+    /* ===== RESULTS GRID ===== */
+    .search-results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .result-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .result-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 26px rgba(236,72,153,0.25);
+    }
+    .result-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+    .result-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      margin: 0.7rem 0 0.2rem;
+    }
+    .result-card p {
+      color: #3b2e68;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .no-results {
+      text-align: center;
+      color: #6b5a87;
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      font-family: 'Outfit', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-transition"></div>
+
+  <!-- ===== TOPBAR ===== -->
+  <div class="topbar">
+    FOR BEST PRICES & INTERNATIONAL DELIVERIES, WHATSAPP :
+    <a href="https://wa.me/918219673715" target="_blank">+91 82196 73715</a>
   </div>
-</main>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <a class="logo" href="index.html" data-transition>AXELR</a>
+    <nav class="nav-links">
+      <a href="shop.html" data-transition>Shop</a>
+      <a href="collections.html" data-transition>Collections</a>
+      <a href="celebrity.html" data-transition>Celebrity Style</a>
+      <a href="influencer.html" data-transition>Influencer Style</a>
+      <a href="about.html" data-transition>About</a>
+      <a href="blog.html" data-transition>Blog</a>
+    </nav>
+    <div class="nav-icons">
+      <a href="account.html"><i class="ri-user-line"></i></a>
+      <a href="wishlist.html"><i class="ri-heart-line"></i></a>
+      <a href="search.html" class="active"><i class="ri-search-line"></i></a>
+      <a href="cart.html"><i class="ri-shopping-bag-2-line"></i></a>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="search-hero">
+    <h1 class="gradient-heading">Search Products</h1>
+    <p>Find your perfect AXELR outfit</p>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search by name or collection..." />
+      <button id="searchBtn"><i class="ri-search-line"></i></button>
+    </div>
+  </section>
+
+  <!-- ===== SEARCH RESULTS ===== -->
+  <section id="resultsSection">
+    <div class="search-results" id="searchResults"></div>
+    <p class="no-results" id="noResults" style="display:none;">No matching items found 💫</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p class="footer-copy">© 2025 AXELR — Designed by Harshit Sharma</p>
+  </footer>
+
+  <!-- ===== JS ===== -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+    const searchResults = document.getElementById("searchResults");
+    const noResults = document.getElementById("noResults");
+    const transition = document.querySelector(".page-transition");
+
+    const sampleProducts = [
+      { name: "Dewdrop", price: "₹32,999", img: "assets/img/q6.jpg" },
+      { name: "Chique", price: "₹28,499", img: "assets/img/q7.jpg" },
+      { name: "Opuluxe", price: "₹34,999", img: "assets/img/q8.jpg" },
+      { name: "Patchouli", price: "₹27,499", img: "assets/img/q1.jpg" },
+      { name: "Rushat", price: "₹26,999", img: "assets/img/q4.jpg" },
+      { name: "Falak Numa", price: "₹29,999", img: "assets/img/q2.jpg" },
+      { name: "Gelati", price: "₹28,499", img: "assets/img/q5.jpg" },
+    ];
+
+    function displayResults(results) {
+      searchResults.innerHTML = "";
+      if (results.length === 0) {
+        noResults.style.display = "block";
+        return;
+      }
+      noResults.style.display = "none";
+      results.forEach(item => {
+        const card = document.createElement("div");
+        card.classList.add("result-card");
+        card.innerHTML = `
+          <img src="${item.img}" alt="${item.name}">
+          <h4>${item.name}</h4>
+          <p>${item.price}</p>
+        `;
+        searchResults.appendChild(card);
+      });
+    }
+
+    function performSearch() {
+      const query = searchInput.value.trim().toLowerCase();
+      if (query === "") {
+        displayResults([]);
+        return;
+      }
+      const results = sampleProducts.filter(p => 
+        p.name.toLowerCase().includes(query)
+      );
+      displayResults(results);
+    }
+
+    searchBtn.addEventListener("click", performSearch);
+    searchInput.addEventListener("keyup", e => {
+      if (e.key === "Enter") performSearch();
+    });
+
+    // Smooth transition fix
+    setTimeout(() => transition.classList.add("hide"), 200);
+  });
+  </script>
+</body>
+</html>
